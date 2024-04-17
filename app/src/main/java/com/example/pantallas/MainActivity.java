@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // metodo boton login
-    public void goLogin (View view) {
+    // metodo boton LoginSignup
+    public void LoginSignup (View view) {
         Intent i = new Intent(this, LoginSignup.class);
 
         EditText myMsg = (EditText) findViewById(R.id.edt_Msg);

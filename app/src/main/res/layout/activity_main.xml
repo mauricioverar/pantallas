@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/splash_screen">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +25,7 @@
             android:id="@+id/btnID_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="goLogin"
+            android:onClick="LoginSignup"
             android:text="@string/btnTX_login" />
 
         <TextView

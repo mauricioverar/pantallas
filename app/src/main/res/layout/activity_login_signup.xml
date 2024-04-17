@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:onClick="goHome"
-    tools:context=".LoginSignup">
+    tools:context=".LoginSignup"
+    android:background="@drawable/signup_page">
 
     <TextView
         android:id="@+id/textView"
