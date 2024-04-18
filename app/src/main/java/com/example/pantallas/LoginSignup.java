@@ -3,6 +3,7 @@ package com.example.pantallas;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -31,6 +32,17 @@ public class LoginSignup extends AppCompatActivity {
         TextView myMsg = (TextView) findViewById(R.id.txv_Msg);
         myMsg.setText(msg);
 
+        Button btn_signup =  findViewById(R.id.button5); // err...faltaba el 5
+
+        // el btn_signup con Intent para cambiar pantalla ******
+        btn_signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginSignup.this, Signup.class); // intencion explicita de lanzar una nueva activity
+                startActivity(intent); // explicito indica hacia donde específicamente, implicito no se sabe hacia donde
+            }
+        });
+
         // getActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -44,17 +56,19 @@ public class LoginSignup extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     } */
 
+    // metodo Go:login para ser usado como evento para cambiar pantalla
+    public void Go_login (View view) {
+        Intent ilogin = new Intent(this, Login.class);
+        startActivity(ilogin);
+    }
+
     // metodo boton anterior
     public void Anterior (View view) {
         Intent i = new Intent(this, Home.class);
         startActivity(i);
     }
 
-    // metodo boton login
-    public void Go_login (View view) {
-        Intent ilogin = new Intent(this, Login.class);
-        startActivity(ilogin);
-    }
+
 
 
 
