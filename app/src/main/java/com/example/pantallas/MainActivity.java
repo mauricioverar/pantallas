@@ -2,8 +2,10 @@ package com.example.pantallas;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,8 +34,18 @@ public class MainActivity extends AppCompatActivity {
         EditText myMsg = (EditText) findViewById(R.id.edt_Msg);
         String msg = myMsg.getText().toString();
 
-        i.putExtra( "Mensaje", msg); // enviar en el intent
-        startActivity(i);
+        // verificar en catLog
+        Log.d("Campo: ", "msg: " +msg);
+
+        // validar
+        if (msg.isEmpty()) {
+            Toast.makeText(getApplicationContext(),"ingrese mensaje", Toast.LENGTH_LONG).show();
+        } else {
+            i.putExtra( "Mensaje", msg); // enviar en el intent
+            startActivity(i);
+        }
+
+
     }
 
 
